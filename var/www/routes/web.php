@@ -33,3 +33,7 @@ Route::post('folder/{id}/task/create', [taskscreateController::class, 'create'])
 
 Route::get('folder/{id}/task/{task_id}/edit', [taskscreateController::class, 'showEditForm'])->name('tasks.edit');
 Route::post('folder/{id}/task/{task_id}/edit', [taskscreateController::class, 'edit']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
