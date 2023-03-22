@@ -5,6 +5,7 @@
 <section>
     <div class="container">
         <div class="row">
+            {{ dd($token) }}
             <div class="col col-md-offset-3 col-md-6">
                 <nav class="panel panel-default">
                     <div class="panel-heading">
@@ -13,7 +14,6 @@
                     <div class="panel-body">
                         <form action="{{ route('password.update') }}" method="POST">
                         @csrf
-                            <input type="hidden" name="token" value="{{ $token }}">
                             <div class="form-group">
                                 <label for="email">
                                     メールアドレス
