@@ -20,9 +20,7 @@ use App\Http\Controllers\HomeController;
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/', [HomeController::class, 'index'])->name('home');
 
-    Route::get('folder/{folder}/list', folderController::class)->only([
-        'index'
-    ]);
+    Route::get('folder/{id}/list', [folderController::class, 'index');
 
     Route::resource('folder', foldercreateController::class)->scoped([
         'id' => 'folder',

@@ -20,14 +20,17 @@ class folderController extends Controller
         $folders = Auth::user()->folders()->get();
 
         // 選択されたidのフォルダを取得
-        // $folders_id = Folder::find($id);
-        $folders_id = $folder->tasks()->get();
+        $folders_id = Folder::find($id);
 
-        return view('folder', [
-            'folders' => $folders,
-            'id' => $folder->id,
-            'tasks_id' => $folders_id
-        ]);
+        if(is_null($folders_id))
+        {
+            abort(404);
+        }
+
+        // 選択されたidの内容を取得
+        $tasks_date = $folders_id->tasks()->get();
+
+        return view('folder', compact('folders','id','tasks_date'));
     }
 
     /**

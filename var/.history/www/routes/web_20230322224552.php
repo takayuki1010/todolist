@@ -20,12 +20,12 @@ use App\Http\Controllers\HomeController;
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/', [HomeController::class, 'index'])->name('home');
 
-    Route::get('folder/{folder}/list', folderController::class)->only([
-        'index'
+    Route::resource('folder/{id}/list', folderController::class)->only([
+        'index',
     ]);
 
     Route::resource('folder', foldercreateController::class)->scoped([
-        'id' => 'folder',
+        'photo' => 'slug',
     ]);
 
     Route::get('folder/{id}/task/create', [taskscreateController::class, 'showCreateForm'])->name('tasks.create');
