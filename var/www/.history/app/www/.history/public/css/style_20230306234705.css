@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333333;
+    margin: 0;
+    padding: 0;
+}
+
+header h2 a {
+    color: #ffffff;
+    text-decoration: none;
+}

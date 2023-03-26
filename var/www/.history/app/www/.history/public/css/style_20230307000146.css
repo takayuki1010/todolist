@@ -1,0 +1,24 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f8;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 5rem;
+    align-items: center;
+    background-color: #333333;
+    padding: 0 5rem;
+}
+
+header h2 a {
+    color: #8c8c8c;
+    text-decoration: none;
+}
